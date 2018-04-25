@@ -7,7 +7,7 @@ const initOptions = {
 const pgp = require('pg-promise')(initOptions);
 
 
-console.log(process.env.HOST);
+// console.log(process.env.HOST);
 const cn = {
     host: process.env.HOST,
     port: process.env.PORT,
