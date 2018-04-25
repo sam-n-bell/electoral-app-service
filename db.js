@@ -18,9 +18,8 @@ const cn = {
 }
 const db = pgp(cn);
 
-let states = await db.many(`select * from states where abbreviation = 'TX' order by abbreviation asc`);
-            
-console.log(states);
+let d = db.one(`select * from states where abbreviation = 'TX'`);
+console.log(d);
 
 const types = require('pg').types;
 
