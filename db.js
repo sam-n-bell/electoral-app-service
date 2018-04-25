@@ -18,16 +18,6 @@ const cn = {
 }
 const db = pgp(cn);
 
-console.log("running");
-db.connect()
-    .then(function (obj) {
-        obj.done(); // success, release connection;
-        console.log("connected");
-    })
-    .catch(function (error) {
-        console.log("ERROR:", error.message);
-    });
-
 const types = require('pg').types;
 
 
