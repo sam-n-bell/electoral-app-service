@@ -18,8 +18,13 @@ const cn = {
 }
 const db = pgp(cn);
 
-let d = db.one(`select * from states where abbreviation = 'TX'`);
-console.log(d);
+db.connect()
+    .then(function (obj) {
+        obj.done(); // success, release connection;
+    })
+    .catch(function (error) {
+        console.log("ERROR:", error.message);
+    });
 
 const types = require('pg').types;
 
