@@ -10,7 +10,7 @@ const pgp = require('pg-promise')(initOptions);
 // console.log(process.env.HOST);
 const cn = {
     host: process.env.HOST,
-    port: process.env.PORT,
+    port: process.env.DB_PORT,
     database: process.env.DATABASE,
     user: process.env.USER,
     password: process.env.PASSWORD,
@@ -18,9 +18,11 @@ const cn = {
 }
 const db = pgp(cn);
 
+console.log("running");
 db.connect()
     .then(function (obj) {
         obj.done(); // success, release connection;
+        console.log("connected");
     })
     .catch(function (error) {
         console.log("ERROR:", error.message);
