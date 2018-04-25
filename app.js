@@ -17,6 +17,8 @@ app.get('/*', function(req, res){
 
 let port = process.env.PORT || 5000;
 
+console.log('host is ' + process.env.HOST);
+
 app.listen(port, function(){
     console.log('listening in on port ' + port);
 });
