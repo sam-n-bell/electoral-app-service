@@ -3,7 +3,7 @@ let db = require('../db');
 let StatesController = {
     getAllStates: async function (req, res) {
         try {
-                let states = await db.many(`select * from states  order by abbreviation asc`);
+                let states = await db.many(`select * from states  order by full_name asc`);
             
                 res.json(states);
             } catch (err) {
